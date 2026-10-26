@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Essite — Web Screenshot Tool</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Essite</h1>
+      <p>Tool tangkapan layar website (Full Page / Viewport) untuk Desktop &amp; Mobile.</p>
+    </header>
+
+    <main>
+      <form id="screenshot-form">
+        <div class="form-group">
+          <label for="url-input">URL Website:</label>
+          <input
+            id="url-input"
+            type="text"
+            placeholder="https://example.com atau github.com"
+            required
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="options-row">
+          <div class="form-group">
+            <label>Tampilan Device:</label>
+            <div class="radio-group">
+              <label class="radio-chip">
+                <input type="radio" name="device" value="desktop" checked />
+                <span>Desktop</span>
+              </label>
+              <label class="radio-chip">
+                <input type="radio" name="device" value="mobile" />
+                <span>Mobile</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Mode Halaman:</label>
+            <div class="checkbox-group">
+              <label>
+                <input type="checkbox" id="fullpage-input" checked />
+                Full Page (Atas ke Bawah)
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" id="btn-submit">Ambil Screenshot</button>
+      </form>
+
+      <div id="status-box" class="status-box" style="display: none;"></div>
+
+      <section id="result-section" class="result-section" style="display: none;">
+        <div class="result-header">
+          <h2>Hasil Screenshot</h2>
+          <div class="action-buttons">
+            <a id="btn-download" href="#" target="_blank" download="screenshot.png" class="btn secondary">
+              Unduh Gambar PNG
+            </a>
+            <button type="button" id="btn-copy-url" class="btn secondary">
+              Salin Link Gambar
+            </button>
+          </div>
+        </div>
+
+        <div class="preview-meta" id="preview-meta"></div>
+
+        <div class="preview-frame" id="preview-frame">
+          <img id="preview-image" alt="Pratinjau Screenshot" src="" />
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

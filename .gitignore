@@ -1,0 +1,14 @@
+essite
+ssweb
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+.env
+*.log
+
+.DS_Store
+.idea/
+.vscode/
